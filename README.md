@@ -95,13 +95,13 @@ all revenue calculations.
 
 | File | Rows | Grain | Query |
 |---|---|---|---|
-| PA_1 | 87 | Daily + overall duration | [`queries/pa1_daily_duration.sql`](queries/daily_session_duration.sql) |
-| PA_2 | 397 | Daily by browser/OS | [`queries/pa2_browser_os_duration.sql`](queries/duration_by_browser_os.sql) |
-| PA_3 | 6 | Funnel counts by browser/OS | [`queries/pa3_funnel_counts.sql`](queries/funnel_step_counts.sql) |
-| PA_4 | 6 | Funnel rates by browser/OS | [`queries/pa4_funnel_rates.sql`](queries/funnel_conversion_rates.sql) |
-| PA_5 | 2,506 | Individual churners | [`queries/pa5_individual_churners.sql`](queries/individual_churners.sql) |
-| PA_8 | 173 | Clean path vs overall daily | [`queries/pa8_clean_path_overall.sql`](queries/clean_path_overall.sql) |
-| PA_9 | 2 | Friction segments + revenue | [`queries/pa9_friction_segments.sql`](queries/friction_segments.sql) |
+| PA_1 | 87 | Daily + overall duration | [`queries/daily_session_duration.sql`](queries/daily_session_duration.sql) |
+| PA_2 | 397 | Daily by browser/OS | [`queries/duration_by_browser_os.sql`](queries/duration_by_browser_os.sql) |
+| PA_3 | 6 | Funnel counts by browser/OS | [`queries/funnel_step_counts.sql`](queries/funnel_step_counts.sql) |
+| PA_4 | 6 | Funnel rates by browser/OS | [`queries/funnel_conversion_rates.sql`](queries/funnel_conversion_rates.sql) |
+| PA_5 | 2,506 | Individual churners | [`queries/individual_churners.sql`](queries/individual_churners.sql) |
+| PA_8 | 173 | Clean path vs overall daily | [`queries/clean_path_overall.sql`](queries/clean_path_overall.sql) |
+| PA_9 | 2 | Friction segments + revenue | [`queries/friction_segments.sql`](queries/friction_segments.sql) |
 | AOV Diagnostic | — | Single scalar value | [`queries/aov_diagnostic.sql`](queries/aov_diagnostic.sql) |
 
 ---
@@ -111,14 +111,14 @@ all revenue calculations.
 All SQL queries are in the `/queries` folder. Each file includes 
 purpose comments and inline analytical decision notes.  
 /queries  
-daily_session_duration.sql 
-duration_by_browser_os.sql 
-funnel_step_counts.sql
-funnel_conversion_rates.sql
-individual_churners.sql  
-clean_path_overall.sql  
-friction_segments.sql  
-aov_diagnostic.sql  
+- daily_session_duration.sql 
+- duration_by_browser_os.sql 
+- funnel_step_counts.sql
+- funnel_conversion_rates.sql
+- individual_churners.sql  
+- clean_path_overall.sql  
+- friction_segments.sql  
+- aov_diagnostic.sql  
 
 ---
 
