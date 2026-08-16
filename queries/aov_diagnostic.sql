@@ -1,0 +1,54 @@
+-- ============================================
+-- AOV Diagnostic: Average Order Value Verification
+-- ============================================
+-- Purpose: Establishes the consistent average order value
+--          used across all revenue calculations
+--          in this analysis. Verifies that transaction-weighted
+--          AVG produces a more accurate AOV than averaging
+--          daily averages, which gives equal weight to
+--          high and low volume days regardless of purchase count.
+--
+-- Result: $66.538262476894573 (used as $66.54)
+--
+-- Output: Single scalar value — no CSV export.
+--         Value hardcoded into PA_9 revenue calculations
+--         as: ROUND(SUM(users) * 66.54, 2)
+--
+-- AOV candidates considered and rejected:
+--   $65.43 — overall_avg_revenue_purchase from PA_8,
+--             calculated as AVG of daily averages.
+--             Biased: a day with 5 purchases and a day
+--             with 500 purchases contribute equally.
+--             Understates true transaction-weighted AOV.
+--   $66.96 — clean_avg_revenue_purchase from PA_8,
+--             average of clean path daily averages only.
+--             Excludes friction-affected users, not
+--             appropriate as a universal revenue multiplier.
+--
+-- Key design decisions:
+--   - AVG() applied across all individual purchase rows —
+--     every transaction weighted equally regardless of
+--     date volume
+--   - Date filter matches analysis window (through 2021-01-25)
+--     to ensure AOV reflects the same population as all
+--     other analysis files
+--   - WHERE event_name = 'purchase' isolates purchase
+--     revenue rows only — prevents NULL revenue values
+--     from non-purchase events diluting the average
+--
+-- Why this matters:
+--   A $1 difference in AOV across 5,042 friction-affected
+--   users changes total revenue at risk by ~$5,042.
+--   Using the correct transaction-weighted AOV ensures
+--   revenue figures are defensible and reproducible
+--   directly from the raw dataset.
+--
+-- Referenced in:
+--   PA_9 revenue calculations
+--   Dashboard 3 tooltip annotations
+--   README.md Key Definitions
+--   README.md AOV Known Limitiations section
+
+--
+-- Dataset: tc-da-1.turing_data_analytics.raw_events
+-- ============================================
