@@ -3,7 +3,7 @@
 **Turing College Data Analytics Certificate - Product Analyst Project**   
 **Analysis Period:** November 2020 - January 2021  
 **Dataset:** E-commerce event-level clickstream data, Nov 2020–Jan 2021  
-**Tableau Dashboard:** [View on Tableau Public](https://public.tableau.com/views/ProductAnalystProject_17805926636940/Introduction?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+**Tableau Dashboard:** [View on Tableau Public](https://public.tableau.com/app/profile/hakeem.leonard/viz/ProductAnalystProject_17805926636940/TimetoPurchase2)
 
 ---
 
